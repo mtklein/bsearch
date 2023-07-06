@@ -16,10 +16,10 @@ int main(void) {
     for (int i = 0; i < len(arr); i++) {
         expect(bsearch_int_const(arr,len(arr), arr+i, lt_int_const, (void*)0) == arr+i);
 
-        int const low  = arr[i] - 1,
-                  high = arr[i] + 1;
-        expect(bsearch_int_const(arr,len(arr), &low , lt_int_const, (void*)0) == arr+i  );
-        expect(bsearch_int_const(arr,len(arr), &high, lt_int_const, (void*)0) == arr+i+1);
+        int const lo = arr[i] - 1,
+                  hi = arr[i] + 1;
+        expect(bsearch_int_const(arr,len(arr), &lo, lt_int_const, (void*)0) == arr+i  );
+        expect(bsearch_int_const(arr,len(arr), &hi, lt_int_const, (void*)0) == arr+i+1);
     }
 
     return 0;
